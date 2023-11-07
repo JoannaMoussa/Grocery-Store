@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oooh+Baby");
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -15,16 +17,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5em;
-  font-size: var(--size-lg);
+  gap: 0.3em;
+  font-size: var(--size-xl);
   background-color: var(--clr-accent);
   padding: 0.5em;
   border-radius: 6px;
   height: fit-content;
 }
 
-.cart {
-  width: 1.7rem;
+.logo p {
+  font-family: "Oooh Baby", "General Sans";
+}
+
+.logo_icon {
+  width: 2rem;
 }
 
 .bars {
@@ -38,7 +44,11 @@
 /* @media (min-width: 640px) {} */
 
 /* md */
-/*@media (min-width: 768px) {};*/
+@media (min-width: 768px) {
+  .logo {
+    font-size: var(--size-2xl);
+  }
+}
 
 /* lg */
 @media (min-width: 1024px) {
@@ -53,14 +63,6 @@
   .navbar {
     display: block;
     width: 100%;
-  }
-
-  .logo {
-    font-size: var(--size-2xl);
-  }
-
-  .cart {
-    width: 1.7rem;
   }
 
   .navlinks {

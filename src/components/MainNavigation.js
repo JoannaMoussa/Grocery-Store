@@ -27,45 +27,13 @@ function MainNavigation() {
       <header className={classes.header}>
         <div className={classes.logo}>
           <svg
-            className={classes.cart}
-            viewBox="0 0 512 512"
+            className={classes.logo_icon}
+            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle
-              cx="176"
-              cy="416"
-              r="16"
-              fill="none"
-              stroke="#000000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="32"
-            />
-            <circle
-              cx="400"
-              cy="416"
-              r="16"
-              fill="none"
-              stroke="#000000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="32"
-            />
             <path
-              fill="none"
-              stroke="#000000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="32"
-              d="M48 80h64l48 272h256"
-            />
-            <path
-              fill="none"
-              stroke="#000000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="32"
-              d="M160 288h249.44a8 8 0 0 0 7.85-6.43l28.8-144a8 8 0 0 0-7.85-9.57H128"
+              fill="#000000"
+              d="M16 21q-2.077 0-3.538-1.462Q11 18.077 11 16t1.462-3.538Q13.923 11 16 11t3.538 1.462Q21 13.923 21 16t-1.462 3.538Q18.077 21 16 21Zm0-1q1.65 0 2.825-1.175T20 16q0-1.65-1.175-2.825T16 12q-1.65 0-2.825 1.175T12 16q0 1.65 1.175 2.825T16 20ZM4.615 19q-.69 0-1.152-.462Q3 18.075 3 17.385v-6.87q0-.2.076-.457q.076-.258.15-.458l2.232-4.985h-.804q-.329 0-.51-.181q-.182-.182-.182-.51v-.232q0-.329.181-.51Q4.325 3 4.653 3h5.693q.329 0 .51.182q.182.181.182.51v.231q0 .329-.181.51q-.182.182-.51.182h-.805l2.496 5.647q-.205.115-.41.275q-.203.16-.405.355L8.47 4.615H6.531L4 10.342v7.043q0 .269.173.442t.442.173h4.673q.068.275.175.528q.106.253.233.472h-5.08ZM16 9.615q-.646-.173-1.073-.696q-.427-.523-.427-1.227t.427-1.227q.427-.523 1.073-.696v3.846q.173-.646.696-1.073q.523-.427 1.227-.427t1.227.427q.523.427.696 1.073H16Z"
             />
           </svg>
           <p>FooDelivery</p>
@@ -101,7 +69,7 @@ function MainNavigation() {
               </li>
               <li>
                 <NavLink
-                  to="/Grocery-Store/shop"
+                  to="/Grocery-Store/shop/"
                   className={({ isActive }) =>
                     isActive ? classes.navlink__active : undefined
                   }
@@ -113,7 +81,7 @@ function MainNavigation() {
               </li>
               <li>
                 <NavLink
-                  to="/Grocery-Store/recipes"
+                  to="/Grocery-Store/recipes/"
                   className={({ isActive }) =>
                     isActive ? classes.navlink__active : undefined
                   }

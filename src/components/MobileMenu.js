@@ -39,7 +39,7 @@ function MobileMenu(props) {
           </li>
           <li>
             <NavLink
-              to="/Grocery-Store/shop"
+              to="/Grocery-Store/shop/"
               onClick={() => props.onClick("hide")}
               className={({ isActive }) =>
                 isActive ? classes.navlink__active : undefined
@@ -51,7 +51,7 @@ function MobileMenu(props) {
           </li>
           <li>
             <NavLink
-              to="/Grocery-Store/recipes"
+              to="/Grocery-Store/recipes/"
               onClick={() => props.onClick("hide")}
               className={({ isActive }) =>
                 isActive ? classes.navlink__active : undefined
