@@ -47,7 +47,21 @@
   text-decoration: underline !important;
 }
 
+.navlinks li {
+  position: relative;
+}
+
 .navlinks a {
   text-decoration: none;
   font-weight: 600;
+}
+
+.notification {
+  font-size: var(--size-base);
+  font-weight: 600;
+  background-color: var(--clr-accent);
+  border-radius: 80%;
+  padding: 0.1em 0.4em;
+  position: absolute;
+  top: -0.7em;
 }

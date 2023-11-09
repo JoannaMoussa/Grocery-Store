@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import ReactDOM from "react-dom";
 
@@ -6,7 +6,11 @@ import classes from "./MainNavigation.module.css";
 
 import MobileMenu from "./MobileMenu";
 
+import cartCtx from "../../store/cart-context";
+
 function MainNavigation() {
+  const cartContext = useContext(cartCtx);
+
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   function clickHandler(action) {
@@ -58,7 +62,7 @@ function MainNavigation() {
             <ul className={classes.navlinks}>
               <li>
                 <NavLink
-                  to="/Grocery-Store"
+                  to="/Grocery-Store/"
                   className={({ isActive }) =>
                     isActive ? classes.navlink__active : undefined
                   }
@@ -77,7 +81,11 @@ function MainNavigation() {
                 >
                   Shop
                 </NavLink>
-                <span className={classes.notification}>1</span>
+                {cartContext.cartNumItems > 0 && (
+                  <span className={classes.notification}>
+                    {cartContext.cartNumItems}
+                  </span>
+                )}
               </li>
               <li>
                 <NavLink

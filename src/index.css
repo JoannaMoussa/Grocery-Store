@@ -34,9 +34,13 @@ body {
   font-family: "General Sans", sans-serif;
   background-color: var(--clr-light);
   color: var(--clr-dark);
-  min-height: 100vh;
-  /*display: flex;
-  flex-direction: column;*/
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -57,18 +61,6 @@ button {
   background: none;
   cursor: pointer;
   color: inherit;
-}
-
-.custom-button {
-  display: inline-block;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: -0.05em;
-  background-color: var(--clr-accent);
-  color: var(--clr-light);
-  padding: 0.5em 1em;
-  border-radius: 6px;
-  transition: transform 0.1s linear;
 }
 
 /* xs */

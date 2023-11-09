@@ -1,8 +1,13 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 import classes from "./MobileMenu.module.css";
 
+import cartCtx from "../../store/cart-context";
+
 function MobileMenu(props) {
+  const cartContext = useContext(cartCtx);
+
   return (
     <div
       className={`${classes.mobile_menu} ${!props.show ? classes.hide : ""}`}
@@ -27,7 +32,7 @@ function MobileMenu(props) {
         <ul className={classes.navlinks}>
           <li>
             <NavLink
-              to="/Grocery-Store"
+              to="/Grocery-Store/"
               onClick={() => props.onClick("hide")}
               className={({ isActive }) =>
                 isActive ? classes.navlink__active : undefined
@@ -48,6 +53,11 @@ function MobileMenu(props) {
             >
               Shop
             </NavLink>
+            {cartContext.cartNumItems > 0 && (
+              <span className={classes.notification}>
+                {cartContext.cartNumItems}
+              </span>
+            )}
           </li>
           <li>
             <NavLink
