@@ -15,7 +15,6 @@ function IngredientsDisplay() {
         cartDisplayContext.showCart ? classes.hide : ""
       }`}
     >
-      Ingredients
       <SearchComponent />
       <IngredientsComponent />
     </div>

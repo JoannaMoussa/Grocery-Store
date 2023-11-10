@@ -1,7 +1,6 @@
 .search_ingr_cont {
   display: flex;
   flex-direction: column;
-  background-color: red;
   flex: 1;
 }
 

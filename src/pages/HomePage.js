@@ -1,6 +1,6 @@
 import CoverImage from "../components/CoverImage";
 import Description from "../components/Description";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 
 function HomePage() {
   return (
