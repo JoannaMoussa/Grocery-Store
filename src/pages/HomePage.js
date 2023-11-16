@@ -1,5 +1,5 @@
-import CoverImage from "../components/CoverImage";
-import Description from "../components/Description";
+import CoverImage from "../components/HomePage/CoverImage";
+import Description from "../components/HomePage/Description";
 import Footer from "../components/Footer/Footer";
 
 function HomePage() {

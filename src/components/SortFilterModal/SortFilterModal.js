@@ -5,8 +5,8 @@ import { Fragment } from "react";
 
 function BackdropModal(props) {
   return (
-    <div className={classes.backdrop}>
-      <div className={classes.modal}>
+    <div className={classes.backdrop} onClick={props.onBackdropClick}>
+      <div className={classes.modal} onClick={(e) => e.stopPropagation()}>
         <form className={classes.form} onSubmit={props.onApplyClick}>
           <h3>Filter</h3>
           <select name="filter" className={classes.select_input}>
@@ -49,7 +49,10 @@ function SortFilterModal(props) {
   return (
     <Fragment>
       {ReactDOM.createPortal(
-        <BackdropModal onApplyClick={props.onApplyClick} />,
+        <BackdropModal
+          onApplyClick={props.onApplyClick}
+          onBackdropClick={props.onBackdropClick}
+        />,
         document.getElementById("modal")
       )}
     </Fragment>

@@ -6,7 +6,7 @@ import IngredientsComponent from "./IngredientsComponent";
 import cartDisplayCtx from "../../store/cartDisplay-context";
 import { useContext } from "react";
 
-function IngredientsDisplay() {
+function IngredientsDisplay(props) {
   const cartDisplayContext = useContext(cartDisplayCtx);
 
   return (
@@ -16,7 +16,7 @@ function IngredientsDisplay() {
       }`}
     >
       <SearchComponent />
-      <IngredientsComponent />
+      <IngredientsComponent ingredients={props.ingredients} />
     </div>
   );
 }

@@ -2,8 +2,8 @@ import classes from "./SwitchButtons.module.css";
 
 import { useContext } from "react";
 
-import cartDisplayCtx from "../store/cartDisplay-context";
-import cartCtx from "../store/cart-context";
+import cartDisplayCtx from "../../store/cartDisplay-context";
+import cartCtx from "../../store/cart-context";
 
 function SwitchButtons() {
   const cartDisplayContext = useContext(cartDisplayCtx);

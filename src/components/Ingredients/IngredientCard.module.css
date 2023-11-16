@@ -1,0 +1,171 @@
+.ingredient_card {
+  width: 100%;
+  height: fit-content;
+  padding: 0.5rem 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: solid var(--clr-dark);
+  border-width: thin;
+  border-radius: 6px;
+  position: relative;
+}
+
+.category {
+  border-radius: 6px;
+  font-size: var(--size-sm);
+  padding-inline-start: 0.6em;
+  padding-inline-end: 0.6em;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  z-index: 99;
+}
+
+.fruits_veg {
+  background-color: rgb(168, 233, 168, 0.8);
+}
+
+.eggs {
+  background-color: rgb(103, 103, 250, 0.8);
+}
+
+.condiments {
+  background-color: rgb(233, 131, 131, 0.8);
+}
+
+.dairy_products {
+  background-color: rgb(254, 187, 160, 0.8);
+}
+
+.spices {
+  background-color: rgba(203, 148, 148, 0.8);
+}
+
+.butchery {
+  background-color: rgb(158, 134, 158, 0.8);
+}
+
+.poultry {
+  background-color: rgb(237, 237, 158, 0.8);
+}
+
+.grains {
+  background-color: rgb(181, 178, 178, 0.8);
+}
+
+.oil {
+  background-color: rgb(244, 202, 124, 0.8);
+}
+
+.seafood {
+  background-color: rgb(246, 206, 212, 0.8);
+}
+
+.water {
+  background-color: rgb(178, 219, 233, 0.8);
+}
+
+.ingredient_img {
+  height: 150px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.ingredient_card h3 {
+  font-size: var(--size-lg);
+  font-weight: 600;
+  align-self: center;
+}
+
+.ingredient_card p {
+  font-size: var(--size-lg);
+  align-self: center;
+}
+
+.ingredient_card sub {
+  font-size: var(--size-base);
+  color: #808080;
+}
+
+.icon {
+  height: 1.5rem;
+  border: solid var(--clr-accent);
+  border-radius: 6px;
+  border-width: thin;
+  align-self: flex-end;
+  padding: 0.3rem;
+}
+
+/*xxs*/
+@media (min-width: 350px) {
+  .ingredient_card {
+    width: 100%;
+  }
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+  .category {
+    font-size: var(--size-base);
+  }
+
+  .ingredient_card h3 {
+    font-size: var(--size-xl);
+  }
+
+  .ingredient_card p {
+    font-size: var(--size-xl);
+  }
+
+  .ingredient_card sub {
+    font-size: var(--size-lg);
+  }
+}
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+@media (min-width: 1280px) {
+  .category {
+    font-size: var(--size-lg);
+  }
+
+  .ingredient_card h3 {
+    font-size: var(--size-2xl);
+  }
+
+  .ingredient_card p {
+    font-size: var(--size-2xl);
+  }
+
+  .ingredient_card sub {
+    font-size: var(--size-xl);
+  }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+  .category {
+    font-size: var(--size-xl);
+  }
+
+  .ingredient_card h3 {
+    font-size: var(--size-3xl);
+  }
+
+  .ingredient_card p {
+    font-size: var(--size-3xl);
+  }
+
+  .ingredient_card sub {
+    font-size: var(--size-2xl);
+  }
+}

@@ -1,4 +1,4 @@
-import coverPhoto from "../assets/cover.jpg";
+import coverPhoto from "../../assets/cover.jpg";
 
 import classes from "./CoverImage.module.css";
 import { NavLink } from "react-router-dom";

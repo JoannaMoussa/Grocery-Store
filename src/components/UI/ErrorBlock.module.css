@@ -1,0 +1,33 @@
+.error_container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--size-lg);
+}
+
+.error_icon {
+  width: 4rem;
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+@media (min-width: 1280px) {
+  .error_container {
+    font-size: var(--size-2xl);
+  }
+}
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */
