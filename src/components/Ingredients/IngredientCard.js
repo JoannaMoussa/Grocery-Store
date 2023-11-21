@@ -1,7 +1,6 @@
 import classes from "./IngredientCard.module.css";
-//classes.${props.category}
 
-const ingredient_category_to_classname = {
+export const ingredient_category_to_classname = {
   "Fruits & Veg": "fruits_veg",
   Eggs: "eggs",
   Condiments: "condiments",
@@ -17,7 +16,11 @@ const ingredient_category_to_classname = {
 
 function IngredientCard(props) {
   return (
-    <div className={classes.ingredient_card}>
+    <div
+      className={`${classes.ingredient_card} ${
+        !props.show ? classes.hide : ""
+      }`}
+    >
       <div
         className={`${classes.category} ${
           classes[ingredient_category_to_classname[props.category]] ?? ""

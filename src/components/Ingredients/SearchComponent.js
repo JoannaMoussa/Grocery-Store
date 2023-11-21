@@ -1,32 +1,44 @@
 import { Fragment, useState } from "react";
+
 import classes from "./SearchComponent.module.css";
+// The 2 imports below are essencial to use the classes defined for the background color of each filter category
+import ingredientCardClasses from "./IngredientCard.module.css";
+import { ingredient_category_to_classname } from "./IngredientCard";
 
 import SortFilterModal from "../SortFilterModal/SortFilterModal";
 
-function SearchComponent() {
+import {
+  sortOptions,
+  sortCriteriaDisplayName,
+} from "../SortFilterModal/SortFilterModal";
+
+function SearchComponent(props) {
   const [showModal, setShowModal] = useState(false);
 
   function sortFilterClickHandler() {
     setShowModal(true);
   }
 
-  function submitHandler() {
+  function applySortFilterHandler(filterCategory, sortCriteria) {
     setShowModal(false);
-    // Add logic of filter and sort
+    props.onFilterSortApply(filterCategory, sortCriteria);
   }
 
   function closeModal() {
     setShowModal(false);
   }
 
+  function searchQueryChangeHandler(event) {
+    props.onSearch(event.target.value);
+  }
+
   return (
     <Fragment>
-      {showModal && (
-        <SortFilterModal
-          onApplyClick={submitHandler}
-          onBackdropClick={closeModal}
-        />
-      )}
+      <SortFilterModal
+        showModal={showModal}
+        onApplyClick={applySortFilterHandler}
+        onBackdropClick={closeModal}
+      />
       <div className={classes.main_container}>
         <div className={classes.search_container}>
           <svg
@@ -39,7 +51,11 @@ function SearchComponent() {
               d="M11.5 2.75a8.75 8.75 0 0 1 6.695 14.384l6.835 6.836a.75.75 0 0 1-.976 1.133l-.084-.073l-6.836-6.835A8.75 8.75 0 1 1 11.5 2.75Zm0 1.5a7.25 7.25 0 1 0 0 14.5a7.25 7.25 0 0 0 0-14.5Z"
             />
           </svg>
-          <input className={classes.input_field} placeholder="Search" />
+          <input
+            className={classes.input_field}
+            placeholder="Search"
+            onChange={searchQueryChangeHandler}
+          />
         </div>
         <button
           className={classes.sort_filter_container}
@@ -80,6 +96,28 @@ function SearchComponent() {
           </svg>
         </button>
       </div>
+
+      {(props.sortApplied !== sortOptions.alphaAZ ||
+        props.filterApplied !== "default") && (
+        <div className={classes.sort_filter_option_displayed_container}>
+          {props.sortApplied !== sortOptions.alphaAZ && (
+            <p className={classes.sort_criteria}>
+              Sorted <span>{sortCriteriaDisplayName[props.sortApplied]}</span>
+            </p>
+          )}
+          {props.filterApplied !== "default" && (
+            <p
+              className={`${classes.filter_criteria} ${
+                ingredientCardClasses[
+                  ingredient_category_to_classname[props.filterApplied]
+                ] ?? ""
+              }`}
+            >
+              Filter: <span>{props.filterApplied}</span>
+            </p>
+          )}
+        </div>
+      )}
     </Fragment>
   );
 }

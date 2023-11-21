@@ -1,8 +1,9 @@
 .ingredients_grid {
+  flex: 1;
   margin-block-start: 1rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-auto-rows: 1fr; /*this makes all the rows have same height (equal to the height of the tallest row)*/
+  grid-auto-rows: min-content 1fr; /*this makes all the rows have same height (equal to the height of the tallest row)*/
   justify-items: center;
   row-gap: 10px;
   overflow-y: auto;

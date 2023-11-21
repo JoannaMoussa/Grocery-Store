@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.hide {
+  display: none;
+}
+
 .category {
   border-radius: 6px;
   font-size: var(--size-sm);
@@ -19,7 +23,7 @@
   position: absolute;
   top: 0.5em;
   right: 0.5em;
-  z-index: 99;
+  z-index: 10;
 }
 
 .fruits_veg {

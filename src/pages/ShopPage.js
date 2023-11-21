@@ -20,12 +20,10 @@ function ShopPage() {
   let content;
 
   if (isPending) {
-    console.log("pending");
     content = <LoadingIndicator />;
   }
 
   if (isError) {
-    console.log(error.message);
     content = <ErrorBlock message={error.message} />;
   }
 
@@ -34,6 +32,7 @@ function ShopPage() {
     for (const key in data) {
       ingredients.push({
         name: key,
+        show: true,
         ...data[key],
       });
     }

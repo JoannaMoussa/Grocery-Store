@@ -9,6 +9,10 @@
   padding-inline-end: 1rem;
 }
 
+.logo_link {
+  text-decoration: none;
+}
+
 .navbar {
   display: none;
 }
@@ -27,6 +31,7 @@
 
 .logo p {
   font-family: "Oooh Baby", "General Sans";
+  font-weight: bold;
 }
 
 .logo_icon {
