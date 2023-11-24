@@ -28,6 +28,7 @@ function IngredientsComponent(props) {
           name={ingredient.name}
           price={ingredient.price}
           unit={ingredient.unit}
+          quantity={ingredient.quantity}
           show={ingredient.show}
         />
       ))}

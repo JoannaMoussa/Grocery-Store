@@ -59,7 +59,7 @@ function BackdropModal(props) {
             ref={filterRef}
           >
             <option defaultValue value="default">
-              Select an option
+              All categories
             </option>
             <option value="Butchery">Butchery</option>
             <option value="Condiments">Condiments</option>

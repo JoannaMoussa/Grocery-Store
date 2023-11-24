@@ -83,9 +83,9 @@ function MainNavigation() {
                 >
                   Shop
                 </NavLink>
-                {cartContext.cartNumItems > 0 && (
+                {cartContext.totalQty > 0 && (
                   <span className={classes.notification}>
-                    {cartContext.cartNumItems}
+                    {cartContext.totalQty}
                   </span>
                 )}
               </li>

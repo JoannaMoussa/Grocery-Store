@@ -92,13 +92,44 @@
   color: #808080;
 }
 
-.icon {
-  height: 1.5rem;
+.cart_btn,
+.item_qty_handler_cont {
   border: solid var(--clr-accent);
   border-radius: 6px;
   border-width: thin;
   align-self: flex-end;
   padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 0.1rem;
+}
+
+.icon {
+  height: 1.5rem;
+}
+
+.item_qty_handler_cont {
+  height: 1.5rem;
+  gap: 0.5rem;
+  padding-inline-start: 0.5rem;
+  padding-inline-end: 0.5rem;
+  background-color: #7febdf70;
+}
+
+.icon_btns {
+  font-size: var(--size-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus_minus_icons {
+  width: 1em;
+}
+
+.qty_txt {
+  font-size: var(--size-lg);
 }
 
 /*xxs*/

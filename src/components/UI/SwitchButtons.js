@@ -27,13 +27,13 @@ function SwitchButtons() {
         onClick={cartDisplayContext.onCartBtnClick}
       >
         Cart
-        {cartContext.cartNumItems > 0 && (
+        {cartContext.totalQty > 0 && (
           <span
             className={`${classes.notification} ${
               cartDisplayContext.showCart ? classes.active_notification : ""
             }`}
           >
-            {cartContext.cartNumItems}
+            {cartContext.totalQty}
           </span>
         )}
       </button>

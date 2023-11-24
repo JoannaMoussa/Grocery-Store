@@ -1,0 +1,141 @@
+.ingredient_container {
+  display: flex;
+  gap: 0.5em;
+  font-size: var(--size-lg);
+  border: solid var(--clr-dark);
+  border-width: thin;
+  border-radius: 6px;
+  padding: 0.5em;
+}
+
+.ingredient_img {
+  height: 66px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.ingredient_details_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.name_bin_container,
+.qty_price_container {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.ingredient_name {
+  font-weight: bold;
+  font-size: var(--size-base);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.icon_btns {
+  font-size: var(--size-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bin_icon {
+  width: 1.3em;
+  min-width: 1.3em;
+}
+
+.price_container {
+  color: var(--clr-accent);
+}
+
+.ingredient_qty_container {
+  display: flex;
+  gap: 0.8em;
+}
+
+.minus_plus_icons {
+  width: 1em;
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+  .ingredient_container {
+    font-size: var(--size-xl);
+  }
+
+  .icon_btns {
+    font-size: var(--size-xl);
+  }
+
+  .ingredient_name {
+    font-size: var(--size-lg);
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  .ingredient_container {
+    font-size: var(--size-lg);
+  }
+
+  .icon_btns {
+    font-size: var(--size-lg);
+  }
+
+  .ingredient_name {
+    font-size: var(--size-base);
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .ingredient_container {
+    font-size: var(--size-xl);
+  }
+
+  .icon_btns {
+    font-size: var(--size-xl);
+  }
+
+  .ingredient_name {
+    font-size: var(--size-lg);
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  .ingredient_container {
+    font-size: var(--size-2xl);
+  }
+
+  .icon_btns {
+    font-size: var(--size-2xl);
+  }
+
+  .ingredient_name {
+    font-size: var(--size-xl);
+  }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+  .ingredient_container {
+    font-size: var(--size-3xl);
+  }
+
+  .icon_btns {
+    font-size: var(--size-3xl);
+  }
+
+  .ingredient_name {
+    font-size: var(--size-2xl);
+  }
+}
