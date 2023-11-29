@@ -5,6 +5,9 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import RootLayout from "./pages/Root";
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
+import RecipesFetch from "./components/Recipes/RecipesFetch";
+import RecipesPage from "./pages/RecipesPage";
+import RecipeDetailPage from "./pages/RecipeDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -13,11 +16,14 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "shop", element: <ShopPage /> },
-      // {
-      //   path: "recipes",
-      //   element: <RecipesPage />,
-      //   children: [{ path: ":eventId", element: <RecipeDetailPage /> }],
-      // },
+      {
+        path: "recipes",
+        element: <RecipesFetch />,
+        children: [
+          { index: true, element: <RecipesPage /> },
+          { path: ":recipeName", element: <RecipeDetailPage /> },
+        ],
+      },
     ],
   },
 ]);

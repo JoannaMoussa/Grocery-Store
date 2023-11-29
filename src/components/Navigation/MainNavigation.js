@@ -95,7 +95,6 @@ function MainNavigation() {
                   className={({ isActive }) =>
                     isActive ? classes.navlink__active : undefined
                   }
-                  end
                 >
                   Recipes
                 </NavLink>

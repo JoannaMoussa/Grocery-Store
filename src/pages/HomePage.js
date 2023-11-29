@@ -1,14 +1,13 @@
-import CoverImage from "../components/HomePage/CoverImage";
-import Description from "../components/HomePage/Description";
+import HomePageBody from "../components/HomePage/HomePageBody";
 import Footer from "../components/Footer/Footer";
+import { Fragment } from "react";
 
 function HomePage() {
   return (
-    <main>
-      <CoverImage />
-      <Description />
+    <Fragment>
+      <HomePageBody />
       <Footer />
-    </main>
+    </Fragment>
   );
 }
 

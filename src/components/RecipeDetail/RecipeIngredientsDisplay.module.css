@@ -1,0 +1,53 @@
+.ingredient_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ingredient_img {
+  height: 70px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.name_price_container {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-lg);
+}
+
+.price_txt {
+  color: var(--clr-accent);
+  font-weight: bold;
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+  .name_price_container {
+    font-size: var(--size-xl);
+  }
+}
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+  .name_price_container {
+    font-size: var(--size-2xl);
+  }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+@media (min-width: 1536px) {
+  .name_price_container {
+    font-size: var(--size-3xl);
+  }
+}

@@ -1,0 +1,42 @@
+.error_container {
+  font-size: var(--size-base);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.error_icon {
+  width: 3.5em;
+  min-width: 3.5em;
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+  .error_container {
+    font-size: var(--size-lg);
+  }
+}
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+  .error_container {
+    font-size: var(--size-xl);
+  }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+@media (min-width: 1536px) {
+  .error_container {
+    font-size: var(--size-2xl);
+  }
+}

@@ -1,0 +1,35 @@
+.intro_txt {
+  text-align: justify;
+  font-size: var(--size-base);
+}
+
+.intro_txt span {
+  font-weight: bold;
+  color: var(--clr-accent);
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+  .intro_txt {
+    font-size: var(--size-lg);
+  }
+}
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+  .intro_txt {
+    font-size: var(--size-xl);
+  }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */

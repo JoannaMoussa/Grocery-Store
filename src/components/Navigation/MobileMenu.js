@@ -66,7 +66,6 @@ function MobileMenu(props) {
               className={({ isActive }) =>
                 isActive ? classes.navlink__active : undefined
               }
-              end
             >
               Recipes
             </NavLink>

@@ -2,6 +2,8 @@
   --clr-dark: #090f1d;
   --clr-light: #f0fdfa;
   --clr-accent: #3cd8c6;
+  --clr-error: #ec888d;
+  --clr-success: #a1cd71;
 
   /* sizes */
   --size-xxs: 0.5rem;
@@ -35,6 +37,14 @@ body {
   background-color: var(--clr-light);
   color: var(--clr-dark);
   height: 100vh;
+}
+
+#popup-msg {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  z-index: 1000;
+  margin-inline-end: 5px;
 }
 
 #root {
