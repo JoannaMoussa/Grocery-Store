@@ -9,6 +9,7 @@
   border-width: thin;
   border-radius: 6px;
   position: relative;
+  mix-blend-mode: multiply;
 }
 
 .hide {
@@ -72,8 +73,9 @@
 
 .ingredient_img {
   height: 150px;
+  width: 150px;
   object-fit: contain;
-  mix-blend-mode: multiply;
+  align-self: center;
 }
 
 .ingredient_card h3 {

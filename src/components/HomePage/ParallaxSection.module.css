@@ -1,0 +1,118 @@
+.parallax {
+  margin-block-start: 2.5rem;
+  background-image: url("../../assets/parallex.jpg");
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-inline-start: 0.8rem;
+  padding-inline-end: 0.8rem;
+}
+
+.parallax h2,
+.parallax p {
+  text-align: center;
+  color: var(--clr-light);
+  text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000;
+  max-width: 800px;
+}
+
+.parallax h2 {
+  font-size: var(--size-xl);
+}
+
+.parallax p {
+  font-size: var(--size-lg);
+}
+
+.recipe_btn {
+  background-color: var(--clr-accent);
+  border-radius: 6px;
+  font-size: var(--size-lg);
+  font-weight: bold;
+  padding: 0.4em 0.6em;
+}
+
+.recipes_anchor {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.arrow_icon {
+  width: 1.75em;
+}
+
+/* xs */
+@media (min-width: 475px) {
+  .parallax h2 {
+    font-size: var(--size-2xl);
+  }
+
+  .parallax p {
+    font-size: var(--size-xl);
+  }
+}
+
+/* sm */
+@media (min-width: 640px) {
+  .parallax h2 {
+    font-size: var(--size-3xl);
+  }
+
+  .parallax p {
+    font-size: var(--size-2xl);
+  }
+
+  .recipe_btn {
+    font-size: var(--size-xl);
+  }
+}
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+  .parallax {
+    min-height: 500px;
+  }
+
+  .parallax h2 {
+    font-size: var(--size-4xl);
+  }
+
+  .parallax p {
+    font-size: var(--size-3xl);
+  }
+
+  .recipe_btn {
+    font-size: var(--size-2xl);
+  }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+@media (min-width: 1536px) {
+  .parallax h2 {
+    font-size: var(--size-5xl);
+  }
+
+  .parallax p {
+    font-size: var(--size-4xl);
+  }
+
+  .recipe_btn {
+    font-size: var(--size-3xl);
+  }
+}

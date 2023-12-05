@@ -7,6 +7,8 @@ import { useContext } from "react";
 import cartDisplayCtx from "../../store/cartDisplay-context";
 import cartCtx from "../../store/cart-context";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 function Cart() {
   const cartDisplayContext = useContext(cartDisplayCtx);
   const cartContext = useContext(cartCtx);
@@ -22,18 +24,25 @@ function Cart() {
         <div className={classes.total_txt}>
           Total: <span>${cartContext.totalPrice}</span>
         </div>
-        <button>Checkout</button>
+        <motion.button
+          whileHover={{ boxShadow: "inset -2.5px -2.5px #090f1d" }}
+          whiletap={{ boxShadow: "inset -2.5px -2.5px #090f1d" }}
+        >
+          Checkout
+        </motion.button>
       </div>
       <div className={classes.cart_ingredients_container}>
-        {cartContext.items.map((item) => (
-          <CartComponent
-            key={item.name}
-            name={item.name}
-            image={item.image}
-            price={item.price}
-            quantity={item.quantity}
-          />
-        ))}
+        <AnimatePresence>
+          {cartContext.items.map((item) => (
+            <CartComponent
+              key={item.name}
+              name={item.name}
+              image={item.image}
+              price={item.price}
+              quantity={item.quantity}
+            />
+          ))}
+        </AnimatePresence>
       </div>
     </div>
   );

@@ -1,48 +1,49 @@
 .cover_container {
   width: 100%;
   height: 200px;
+  background-size: cover;
   position: relative;
-}
-
-.cover_img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  background-image: url("../../assets/cover.jpg");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  mix-blend-mode: multiply;
 }
 
 .cover_body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .cover_title {
   font-size: var(--size-2xl);
   color: var(--clr-light);
-  text-shadow: 0 0 20px #000, 0 0 35px #000;
+  text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000;
   text-align: center;
 }
 
-.cover_btn {
-  font-size: var(--size-sm);
+.shop_btn {
+  font-size: var(--size-base);
+  margin-block-start: 0.5em;
+  background-color: var(--clr-accent);
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 0.4em 0.6em;
+}
+
+.shop_anchor {
+  text-decoration: none;
   display: flex;
   justify-content: center;
-  gap: 0.3em;
-  background-color: var(--clr-accent);
-  color: var(--clr-dark);
-  padding: 0.4em 0.6em;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
+  align-items: center;
+  gap: 0.4em;
 }
 
 .arrow_icon {
-  width: 1.5rem;
+  width: 1.75em;
 }
 
 /* xs */
@@ -54,23 +55,19 @@
   .cover_title {
     font-size: var(--size-3xl);
   }
-
-  .cover_btn {
-    font-size: var(--size-base);
-  }
 }
 
 /* sm */
 @media (min-width: 640px) {
   .cover_container {
-    height: 300px;
+    height: 350px;
   }
 
   .cover_title {
     font-size: var(--size-4xl);
   }
 
-  .cover_btn {
+  .shop_btn {
     font-size: var(--size-lg);
   }
 }
@@ -80,24 +77,20 @@
   .cover_title {
     font-size: var(--size-5xl);
   }
-
-  .cover_btn {
-    font-size: var(--size-xl);
-  }
 }
 
 /* lg */
 @media (min-width: 1024px) {
   .cover_container {
-    height: 400px;
+    height: 500px;
   }
 
   .cover_title {
     font-size: var(--size-6xl);
   }
 
-  .cover_btn {
-    font-size: var(--size-2xl);
+  .shop_btn {
+    font-size: var(--size-xl);
   }
 }
 
@@ -106,23 +99,19 @@
   .cover_title {
     font-size: var(--size-7xl);
   }
-
-  .cover_btn {
-    font-size: var(--size-2xl);
-  }
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
   .cover_container {
-    height: 500px;
+    height: 600px;
   }
 
   .cover_title {
     font-size: var(--size-8xl);
   }
 
-  .cover_btn {
-    font-size: var(--size-3xl);
+  .shop_btn {
+    font-size: var(--size-2xl);
   }
 }

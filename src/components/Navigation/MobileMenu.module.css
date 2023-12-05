@@ -20,7 +20,7 @@
   padding-inline-end: 1rem;
 }
 
-.close_btn {
+.close_icon {
   width: 3rem;
 }
 
@@ -65,3 +65,33 @@
   position: absolute;
   top: -0.7em;
 }
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+  .mobile_menu h1 {
+    font-size: var(--size-4xl);
+  }
+
+  .navlinks {
+    font-size: var(--size-2xl);
+  }
+
+  .notification {
+    font-size: var(--size-lg);
+  }
+}
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */

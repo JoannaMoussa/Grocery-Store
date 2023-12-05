@@ -6,12 +6,13 @@
   border-width: thin;
   border-radius: 6px;
   padding: 0.5em;
+  mix-blend-mode: multiply;
 }
 
 .ingredient_img {
   height: 66px;
+  width: 66px;
   object-fit: contain;
-  mix-blend-mode: multiply;
 }
 
 .ingredient_details_container {
@@ -42,6 +43,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-inline-start: 0.2em;
+  margin-inline-end: 0.2em;
 }
 
 .bin_icon {
@@ -116,10 +119,6 @@
     font-size: var(--size-2xl);
   }
 
-  .icon_btns {
-    font-size: var(--size-2xl);
-  }
-
   .ingredient_name {
     font-size: var(--size-xl);
   }
@@ -132,7 +131,7 @@
   }
 
   .icon_btns {
-    font-size: var(--size-3xl);
+    font-size: var(--size-2xl);
   }
 
   .ingredient_name {

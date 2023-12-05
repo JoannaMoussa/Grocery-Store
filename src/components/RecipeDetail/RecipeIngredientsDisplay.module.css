@@ -1,11 +1,13 @@
 .ingredient_container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.6rem;
+  background-color: var(--clr-light);
 }
 
 .ingredient_img {
+  width: 70px;
   height: 70px;
   object-fit: contain;
   mix-blend-mode: multiply;

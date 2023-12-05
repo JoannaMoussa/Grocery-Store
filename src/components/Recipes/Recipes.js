@@ -5,6 +5,8 @@ import RecipesFetchError from "./RecipesFetchError";
 import RecipeCard from "./RecipeCard";
 import { Fragment } from "react";
 
+import { motion } from "framer-motion";
+
 function Recipes(props) {
   return (
     <Fragment>
@@ -20,7 +22,11 @@ function Recipes(props) {
       )}
 
       {props.recipesFetchResult.status === "success" && (
-        <div className={classes.recipes_container}>
+        <motion.div
+          className={classes.recipes_container}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
+        >
           {props.recipesFetchResult.recipes.map((recipe) => (
             <RecipeCard
               key={recipe.name}
@@ -29,7 +35,7 @@ function Recipes(props) {
               totalPrice={recipe.totalPrice}
             />
           ))}
-        </div>
+        </motion.div>
       )}
     </Fragment>
   );

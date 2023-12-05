@@ -9,14 +9,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1em;
   margin-block-start: 2rem;
   padding-inline-start: 1rem;
   padding-inline-end: 1rem;
 }
 
-.link_container {
+.link {
   align-self: flex-start;
+}
+
+.link_container {
   font-size: var(--size-lg);
   display: flex;
   justify-content: center;
@@ -42,10 +45,12 @@
   max-width: 790px;
   height: 180px;
   object-fit: cover;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.7);
 }
 
 .ingredients_title {
   font-size: var(--size-xl);
+  margin-block-start: 0.75em;
 }
 
 .ingredients_container {
@@ -140,8 +145,16 @@
     font-size: var(--size-2xl);
   }
 
+  .recipe_name {
+    font-size: var(--size-4xl);
+  }
+
   .recipe_img {
     height: 280px;
+  }
+
+  .ingredients_title {
+    font-size: var(--size-3xl);
   }
 
   .total_price {
@@ -165,6 +178,14 @@
 @media (min-width: 1536px) {
   .link_container {
     font-size: var(--size-3xl);
+  }
+
+  .recipe_name {
+    font-size: var(--size-5xl);
+  }
+
+  .ingredients_title {
+    font-size: var(--size-4xl);
   }
 
   .total_price {

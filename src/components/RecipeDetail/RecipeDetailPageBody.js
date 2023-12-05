@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import LoadingIndicator from "../UI/LoadingIndicator";
@@ -11,11 +11,31 @@ import cartCtx from "../../store/cart-context";
 
 import classes from "./RecipeDetailPageBody.module.css";
 
+import { motion } from "framer-motion";
+
+const MotionRecipeIngredientsDisplay = motion(
+  React.forwardRef(RecipeIngredientsDisplay)
+);
+
+const ingredientsContainerMotion = {
+  appear: {
+    transition: { delayChildren: 0.3, staggerChildren: 0.15 },
+  },
+};
+
+const ingredientsMotion = {
+  hidden: {
+    opacity: 0,
+  },
+  appear: {
+    opacity: 1,
+  },
+};
+
 function RecipeDetailPageBody(props) {
   const cartContext = useContext(cartCtx);
 
-  const [showPopupMessage, setShowPopupMessage] = useState(false);
-  const [userMessage, setUserMessage] = useState();
+  const [userMessage, setUserMessage] = useState("");
 
   let recipe;
 
@@ -23,7 +43,11 @@ function RecipeDetailPageBody(props) {
     const recipeIndex = props.recipesFetchResult.recipes.findIndex(
       (recipe) => recipe.name === props.recipeName
     );
-    recipe = props.recipesFetchResult.recipes[recipeIndex];
+    if (recipeIndex === -1) {
+      throw new Response("Not Found", { status: 404 });
+    } else {
+      recipe = props.recipesFetchResult.recipes[recipeIndex];
+    }
   }
 
   function btnClickHandler() {
@@ -39,24 +63,24 @@ function RecipeDetailPageBody(props) {
       setUserMessage(
         ReactDOM.createPortal(
           <PopupMessage
+            key={Math.random()}
             error={false}
             message="Products were successfully added to cart"
           />,
           document.getElementById("popup-msg")
         )
       );
-      setShowPopupMessage(true);
     } else {
       setUserMessage(
         ReactDOM.createPortal(
           <PopupMessage
+            key={Math.random()}
             error={true}
             message="An error occured. Try refreshing the page"
           />,
           document.getElementById("popup-msg")
         )
       );
-      setShowPopupMessage(true);
     }
   }
 
@@ -75,33 +99,59 @@ function RecipeDetailPageBody(props) {
       {props.recipesFetchResult.status === "success" && (
         <Fragment>
           <div className={classes.recipe_detail_container}>
-            <div className={classes.link_container}>
-              <svg
-                className={classes.arrow_icon}
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+            <Link to="/Grocery-Store/recipes/" className={classes.link}>
+              <motion.div
+                className={classes.link_container}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 1 } }}
               >
-                <path
-                  fill="none"
-                  stroke="#090f1d"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m3 12l5 5m-5-5l5-5m-5 5h18"
-                />
-              </svg>
-              <Link to="/Grocery-Store/recipes/">Back To Recipes</Link>
-            </div>
-            <h1 className={classes.recipe_name}>{recipe.name}</h1>
-            <img
+                <svg
+                  className={classes.arrow_icon}
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="none"
+                    stroke="#090f1d"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m3 12l5 5m-5-5l5-5m-5 5h18"
+                  />
+                </svg>
+                <span>Back To Recipes</span>
+              </motion.div>
+            </Link>
+            <motion.h1
+              className={classes.recipe_name}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 1 } }}
+            >
+              {recipe.name}
+            </motion.h1>
+            <motion.img
               src={recipe.image_url}
               alt={recipe.name}
               className={classes.recipe_img}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 1 } }}
             />
-            <h2 className={classes.ingredients_title}>Ingredients</h2>
-            <div className={classes.ingredients_container}>
+            <motion.h2
+              className={classes.ingredients_title}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 1 } }}
+            >
+              Ingredients
+            </motion.h2>
+            <motion.div
+              className={classes.ingredients_container}
+              initial="hidden"
+              animate="appear"
+              variants={ingredientsContainerMotion}
+            >
               {recipe.ingredients.map((ingredient) => (
-                <RecipeIngredientsDisplay
+                <MotionRecipeIngredientsDisplay
+                  variants={ingredientsMotion}
                   key={ingredient}
                   name={ingredient}
                   image={
@@ -110,11 +160,22 @@ function RecipeDetailPageBody(props) {
                   price={props.recipesFetchResult.ingredients[ingredient].price}
                 />
               ))}
-            </div>
-            <div className={classes.total_price}>
+            </motion.div>
+            <motion.div
+              className={classes.total_price}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 1 } }}
+            >
               Total Price: <span>${recipe.totalPrice}</span>
-            </div>
-            <button className={classes.add_cart_btn} onClick={btnClickHandler}>
+            </motion.div>
+            <motion.button
+              className={classes.add_cart_btn}
+              onClick={btnClickHandler}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 1 } }}
+              whileHover={{ boxShadow: "inset -3px -3px #090f1d" }}
+              whileTap={{ boxShadow: "inset -3px -3px #090f1d" }}
+            >
               <svg
                 className={classes.cart_icon}
                 viewBox="0 0 24 24"
@@ -126,9 +187,10 @@ function RecipeDetailPageBody(props) {
                 />
               </svg>
               <span>Add All To Cart</span>
-            </button>
+            </motion.button>
           </div>
-          {showPopupMessage && userMessage}
+
+          {userMessage}
         </Fragment>
       )}
     </Fragment>

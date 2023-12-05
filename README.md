@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# _FooDelivery_: A Grocery Store Web Application Built With React Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Content
 
-## Available Scripts
+1. [Introduction](#1-introduction)
+1. [Application's web pages](#2-applications-web-pages)
+1. [Some React Hooks/Features Used to Build This Web Application](#3-some-react-hooksfeatures-used-to-build-this-web-app)
+1. [External Libraries Used In This Web Application](#4-external-libraries-used-in-this-web-application)
 
-In the project directory, you can run:
+## 1. Introduction
 
-### `npm start`
+_FooDelivery_ is an online grocery store where clients can see the store's products and add their desired products to their shopping cart. They can also check the store's "Recipes Recommendations" page, where each recipe is displayed along with its ingredients list. With one click, clients can add the recipes' ingredients to their shopping cart.
+This web appliction is fully responsive, the styling is adapted to different viewport sizes, from mobiles to screens above 1536px wide.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 2. Application's web pages
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Using [**react-router-dom**](https://reactrouter.com/en/main), 4 routes are built, each of which is responsible for displaying a web page:
 
-### `npm test`
+- **Home Page**: This page displays information which let clients know more about the _FooDelivery_ concept.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Shop Page**: This page displays two sections: the **store's products** and the **shopping cart**.
 
-### `npm run build`
+  - Concerning the **store's products**: each product is displayed in a card containing information like its category and its price. The products and their information are fetched from a database hosted on [FireBase](https://firebase.google.com/).
+    Clients can click on a cart button that is in the ingredient card to add a specific product to their shopping cart. They can also increase/decrease the product's quantity from inside the product's card if it is already in the shopping cart. There is a search/filter/sort functionality to make it easy for clients to find a specific product.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - Concerning the **shopping cart**, it lists the products added by the client, their number, as well as the total price. Clients can increase/decrease the quantity of each product from inside the shopping cart. They can delete products from it as well. The shopping cart's information is stored in the **local storage.**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Recipes Page**: This page lists all the recommended recipes of the week, and like the store's products, the recipes and their information are stored in a database hosted on [FireBase](https://firebase.google.com/). Clients can click on each recipe, and they will be taken to the recipe details page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Recipe Details Page**: This page displays the recipe information such as its ingredients list. Clients can click on the `Add All To Cart` button, to add all the recipe's ingredients to their shopping cart.
 
-### `npm run eject`
+## 3. Some React Hooks/Features Used to Build This Web Application
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **useContext**: Context is used for some states, like the cart's state, in order to have that state available to all components in this web application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **useReducer**: useReducer hook is used to store and manage the shopping cart state. Three actions can be dispatched to the Reducer Function:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  - Increase by one the product quantity in shopping cart
+  - Decrease by one the product quantity in shopping cart
+  - Delete a product from shopping cart
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Custom Hook**: A custom Hook is used to determine the position of a scrollbar of a certain div, and given that position, determine where to apply a box-shadow to that div (on top, on bottom, on top and bottom).
 
-## Learn More
+## 4. External Libraries Used In This Web Application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [**react-router-dom**](https://reactrouter.com/en/main): As mentioned in [section 2](#2-applications-web-pages), react-router-dom is used to build the different routes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [**Tanstack Query**](https://tanstack.com/): Tanstack Query data-fetching library is used to fetch ingredients and recipes from the database.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [**Framer Motion**](https://www.framer.com/motion/): Framer Motion library is used to add animations.

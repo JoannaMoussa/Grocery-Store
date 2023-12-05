@@ -1,8 +1,8 @@
 import classes from "./RecipeIngredientsDisplay.module.css";
 
-function RecipeIngredientsDisplay(props) {
+function RecipeIngredientsDisplay(props, ref) {
   return (
-    <div className={classes.ingredient_container}>
+    <div className={classes.ingredient_container} ref={ref}>
       <img
         src={props.image}
         alt={props.name}

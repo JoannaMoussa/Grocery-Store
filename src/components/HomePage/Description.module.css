@@ -16,7 +16,7 @@
   width: 1.7rem;
 }
 
-.single_description h3 {
+.single_description h2 {
   font-size: var(--size-lg);
   margin-block-start: 0.3em;
   margin-block-end: 0.2em;
@@ -39,7 +39,7 @@
     margin-inline-end: 3rem;
   }
 
-  .single_description h3 {
+  .single_description h2 {
     font-size: var(--size-xl);
   }
 
@@ -57,7 +57,12 @@
     margin-inline-start: 5rem;
     margin-inline-end: 5rem;
   }
-  .single_description h3 {
+
+  .description_icon {
+    width: 2.3rem;
+  }
+
+  .single_description h2 {
     font-size: var(--size-2xl);
   }
 
@@ -75,7 +80,7 @@
     margin-inline-start: 6rem;
     margin-inline-end: 6rem;
   }
-  .single_description h3 {
+  .single_description h2 {
     font-size: var(--size-3xl);
   }
 

@@ -1,9 +1,15 @@
 import classes from "./Footer.module.css";
 
+import { motion } from "framer-motion";
+
 function Footer() {
   return (
     <div className={classes.footer}>
-      <div className={classes.components_container}>
+      <motion.div
+        className={classes.components_container}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { duration: 0.5 } }}
+      >
         <div className={classes.footer_component}>
           <div className={classes.footer_inner_component}>
             <h3>Contact Us</h3>
@@ -78,9 +84,13 @@ function Footer() {
             <span>Privacy Policy</span>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className={classes.copyright_container}>
+      <motion.div
+        className={classes.copyright_container}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { duration: 0.5 } }}
+      >
         <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
           <path
             fill="#030712"
@@ -88,7 +98,7 @@ function Footer() {
           />
         </svg>
         <span>2023 Foodelivery. All Rights Reserved</span>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -1,17 +1,8 @@
 import classes from "./ErrorBlock.module.css";
 
-import cartDisplayCtx from "../../store/cartDisplay-context";
-import { useContext } from "react";
-
 function ErrorBlock(props) {
-  const cartDisplayContext = useContext(cartDisplayCtx);
-
   return (
-    <div
-      className={`${classes.error_container} ${
-        cartDisplayContext.showCart ? classes.hide : ""
-      }`}
-    >
+    <div className={classes.error_container}>
       <div className={classes.error_icon}>
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path

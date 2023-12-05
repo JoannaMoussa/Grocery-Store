@@ -9,6 +9,7 @@ import Cart from "../components/Cart/Cart";
 import SwitchButtons from "../components/UI/SwitchButtons";
 import LoadingIndicator from "../components/UI/LoadingIndicator";
 import ErrorBlock from "../components/UI/ErrorBlock";
+import { Fragment } from "react";
 
 function ShopPage() {
   const { data, isPending, isError, error } = useQuery({
@@ -36,18 +37,18 @@ function ShopPage() {
         ...data[key],
       });
     }
-    content = <IngredientsDisplay ingredients={ingredients} />;
+    content = (
+      <ShopPageWrapper>
+        <CartDisplayCtxProvider>
+          <IngredientsDisplay ingredients={ingredients} />
+          <Cart />
+          <SwitchButtons />
+        </CartDisplayCtxProvider>
+      </ShopPageWrapper>
+    );
   }
 
-  return (
-    <ShopPageWrapper>
-      <CartDisplayCtxProvider>
-        {content}
-        <Cart />
-        <SwitchButtons />
-      </CartDisplayCtxProvider>
-    </ShopPageWrapper>
-  );
+  return <Fragment> {content} </Fragment>;
 }
 
 export default ShopPage;

@@ -45,6 +45,7 @@
   flex-direction: column;
   gap: 0.6rem;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* xs */

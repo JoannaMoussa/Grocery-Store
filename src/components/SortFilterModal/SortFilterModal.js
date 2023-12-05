@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import classes from "./SortFilterModal.module.css";
 import { Fragment, useRef } from "react";
 
+import { motion } from "framer-motion";
+
 export const sortOptions = {
   alphaAZ: "1",
   alphaZA: "2",
@@ -125,9 +127,14 @@ function BackdropModal(props) {
             </label>
           </div>
 
-          <button type="submit" className={classes.apply_btn}>
+          <motion.button
+            type="submit"
+            className={classes.apply_btn}
+            whileHover={{ boxShadow: "inset -2.5px -2.5px #090f1d" }}
+            whileTap={{ boxShadow: "inset -2.5px -2.5px #090f1d" }}
+          >
             Apply
-          </button>
+          </motion.button>
         </form>
       </div>
     </div>

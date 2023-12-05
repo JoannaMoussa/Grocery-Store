@@ -1,13 +1,14 @@
 {
   "name": "grocery-store",
   "version": "0.1.0",
-  "homepage": "https://JoannaMoussa.github.io/Grocery-Store",
+  "homepage": "https://JoannaMoussa.github.io/Grocery-Store/#/Grocery-Store/",
   "private": true,
   "dependencies": {
     "@tanstack/react-query": "^5.7.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "framer-motion": "^10.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",

@@ -1,12 +1,15 @@
 import classes from "./PopupMessage.module.css";
+import { motion } from "framer-motion";
 
 function PopupMessage(props) {
   console.log("popup message component");
   return (
-    <div
+    <motion.div
       className={`${classes.message_container} ${
         props.error ? classes.error : classes.success
       }`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: [0, 1, 1, 1, 1, 0], transition: { duration: 3 } }}
     >
       {props.error && (
         <svg
@@ -38,7 +41,7 @@ function PopupMessage(props) {
         </svg>
       )}
       <p>{props.message}</p>
-    </div>
+    </motion.div>
   );
 }
 
