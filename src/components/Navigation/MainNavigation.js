@@ -15,6 +15,12 @@ function MainNavigation() {
 
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
+  if (showMobileMenu) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
   function clickHandler(action) {
     if (action === "show") {
       setShowMobileMenu(true);

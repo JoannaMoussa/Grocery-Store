@@ -16,9 +16,17 @@ const image = {
   },
 };
 
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
+
 function RecipeCard(props) {
   return (
-    <Link to={`${props.name}`} className={classes.recipe_card_link}>
+    <Link
+      to={`${props.name}`}
+      className={classes.recipe_card_link}
+      onClick={scrollToTop}
+    >
       <motion.div
         className={classes.recipe_card_container}
         whileHover="hover"

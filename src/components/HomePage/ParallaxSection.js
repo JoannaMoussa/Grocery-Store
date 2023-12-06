@@ -6,6 +6,10 @@ import { motion } from "framer-motion";
 const hidden = { opacity: 0, scale: 0.8 };
 const appear = { opacity: 1, scale: 1, transition: { duration: 0.5 } };
 
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
+
 function ParallaxSection() {
   return (
     <div className={classes.parallax}>
@@ -28,7 +32,11 @@ function ParallaxSection() {
         whileInView={appear}
         viewport={{ once: true }}
       >
-        <Link to="/Grocery-Store/recipes/" className={classes.recipes_anchor}>
+        <Link
+          to="/Grocery-Store/recipes/"
+          className={classes.recipes_anchor}
+          onClick={scrollToTop}
+        >
           <span>Go To Recipes</span>
           <svg
             className={classes.arrow_icon}

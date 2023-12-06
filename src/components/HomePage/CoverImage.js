@@ -3,34 +3,29 @@ import { Link } from "react-router-dom";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// const initialState = { opacity: 0 };
-// const appear = { opacity: 1, transition: { duration: 0.75 } };
+const initialState = { opacity: 0 };
+const appear = { opacity: 1, transition: { duration: 0.75 } };
 
 function CoverImage() {
   // SrollY tells us by how many px the user scrolled along the y axis
   const { scrollY } = useScroll();
-  // useTransform will transform the px values to opacity values. It returns the transformed values,
-  // it wrapes them in a motion value object, it does not re-render the component
-  // function everytime we scroll
-  const opacityCoverImg = useTransform(
-    scrollY,
-    [0, 200, 300, 500],
-    [1, 0.5, 0.5, 0]
-  );
+  // useTransform will transform the px values of scrollY to the desired styling values
+  // (opacity, scale, y position and so on).
+  // It returns the transformed values, it wrapes them in a motion value object,
+  // it does not re-render the component function everytime we scroll
   const yCoverImg = useTransform(scrollY, [0, 200], [0, -50]);
-
-  const yText = useTransform(scrollY, [0, 400], [0, 100]);
+  const yText = useTransform(scrollY, [0, 400], [0, 80]);
   const scaleText = useTransform(scrollY, [0, 300], [1, 1.2]);
 
   return (
     <motion.div
       className={classes.cover_container}
-      style={{ opacity: opacityCoverImg, y: yCoverImg }}
+      initial={initialState}
+      animate={appear}
+      style={{ y: yCoverImg }}
     >
       <motion.div
         className={classes.cover_body}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 0.75 } }}
         style={{ scale: scaleText, y: yText }}
       >
         <h1 className={classes.cover_title}>Welcome To Our Store</h1>

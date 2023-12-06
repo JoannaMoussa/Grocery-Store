@@ -35,7 +35,7 @@ function VegetablesSection() {
             Our commitment to supporting local farmers is at the heart of what
             we do, ensuring that you not only enjoy the best flavors but also
             contribute to the
-            <span className={classes.italic}>sustainability</span> of our local
+            <span className={classes.italic}> sustainability</span> of our local
             agricultural community.
           </p>
         </motion.div>

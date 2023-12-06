@@ -10,14 +10,14 @@ import { motion } from "framer-motion";
 const list = {
   visible: {
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.1,
     },
   },
 };
 
 const item = {
-  visible: { opacity: 1, x: 0, transition: { duration: 0.2 } },
-  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.25 } },
+  hidden: { opacity: 0, x: -20 },
 };
 
 function MobileMenu(props) {
