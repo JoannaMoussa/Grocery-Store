@@ -1,50 +1,60 @@
-# _FooDelivery_: A Grocery Store Web Application Built With React Library
+# _FooDelivery_: A Grocery Store Web Application Built With ReactJS
+
+![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![image](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![image](https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=React_Query&logoColor=white)
+![image](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)
+![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ## Table of Content
 
 1. [Introduction](#1-introduction)
-1. [Application's web pages](#2-applications-web-pages)
-1. [Some React Hooks/Features Used to Build This Web Application](#3-some-react-hooksfeatures-used-to-build-this-web-app)
-1. [External Libraries Used In This Web Application](#4-external-libraries-used-in-this-web-application)
+1. [Application's Web Pages](#2-applications-web-pages)
+1. [Key React Hooks/Features](#3-key-react-hooksfeatures)
+1. [External Libraries](#4-external-libraries)
 
 ## 1. Introduction
 
-_FooDelivery_ is an online grocery store where clients can see the store's products and add their desired products to their shopping cart. They can also check the store's "Recipes Recommendations" page, where each recipe is displayed along with its ingredients list. With one click, clients can add the recipes' ingredients to their shopping cart.
-This web appliction is fully responsive, the styling is adapted to different viewport sizes, from mobiles to screens above 1536px wide.
+_FooDelivery_ is an online grocery store where clients can browse the store's products as well as the ability to search, filter and sort products. Products can be added to a shopping cart with full control over the quantity of each product. Clients can also check the store's recipe recommendations: each recipe is displayed along with its ingredients list. With one click, all the recipes' ingredients can be added to the shopping cart.
 
-## 2. Application's web pages
+This web application is fully responsive as the styling is adapted to different viewport sizes, from mobiles to desktops.
 
-Using [**react-router-dom**](https://reactrouter.com/en/main), 4 routes are built, each of which is responsible for displaying a web page:
+## 2. Application's Web Pages
 
-- **Home Page**: This page displays information which let clients know more about the _FooDelivery_ concept.
+Using [**react-router-dom**](https://reactrouter.com/en/main), 4 routes are built responsible for displaying the following web pages:
 
-- **Shop Page**: This page displays two sections: the **store's products** and the **shopping cart**.
+- **Home Page**: This page welcomes users and displays general information as well as introductions and links to access other pages.
 
-  - Concerning the **store's products**: each product is displayed in a card containing information like its category and its price. The products and their information are fetched from a database hosted on [FireBase](https://firebase.google.com/).
-    Clients can click on a cart button that is in the ingredient card to add a specific product to their shopping cart. They can also increase/decrease the product's quantity from inside the product's card if it is already in the shopping cart. There is a search/filter/sort functionality to make it easy for clients to find a specific product.
+- **Shop Page**: This page displays two sections: the **Products** and the **Shopping Cart**.
 
-  - Concerning the **shopping cart**, it lists the products added by the client, their number, as well as the total price. Clients can increase/decrease the quantity of each product from inside the shopping cart. They can delete products from it as well. The shopping cart's information is stored in the **local storage.**
+  - **Products**: Each product is displayed in a card containing information such as its category and its price. The products and their information are fetched from a database hosted on [FireBase](https://firebase.google.com/).
 
-- **Recipes Page**: This page lists all the recommended recipes of the week, and like the store's products, the recipes and their information are stored in a database hosted on [FireBase](https://firebase.google.com/). Clients can click on each recipe, and they will be taken to the recipe details page.
+    - If the product is not added to the shopping cart, a cart icon will be displayed in the product’s card. Once clicked, the product will be added to the shopping cart with a quantity of 1.
 
-- **Recipe Details Page**: This page displays the recipe information such as its ingredients list. Clients can click on the `Add All To Cart` button, to add all the recipe's ingredients to their shopping cart.
+    - If the product is already added to the shopping cart, the cart icon will be replaced with the product’s quantity in the shopping cart along with a plus and minus button to increase/decrease its quantity by 1.
 
-## 3. Some React Hooks/Features Used to Build This Web Application
+    Search, filter and sort features are implemented to make it easier for users to find a specific product.
 
-- **useContext**: Context is used for some states, like the cart's state, in order to have that state available to all components in this web application.
+  - **Shopping Cart**: A list of the products added by the user, their number, as well as the total price. Users can increase/decrease (by 1) the quantity of each individual product from inside the shopping cart. They can also directly delete a certain product. The shopping cart's information is stored in the **local storage** to allow data to persist even after refreshing or re-visiting the website at a later date.
 
-- **useReducer**: useReducer hook is used to store and manage the shopping cart state. Three actions can be dispatched to the Reducer Function:
+- **Recipes Page**: This page lists all the recommended recipes of the week. The recipes data are also stored in a database hosted on [FireBase](https://firebase.google.com/). Users can click on each recipe, and they will be taken to the recipe details page.
 
-  - Increase by one the product quantity in shopping cart
-  - Decrease by one the product quantity in shopping cart
-  - Delete a product from shopping cart
+- **Recipe Details Page**: This page displays the recipe information such as its ingredients list. Users can click on the `Add All To Cart` button, to add all the recipe's ingredients to their shopping cart in one go.
 
-- **Custom Hook**: A custom Hook is used to determine the position of a scrollbar of a certain div, and given that position, determine where to apply a box-shadow to that div (on top, on bottom, on top and bottom).
+## 3. Key React Hooks/Features
 
-## 4. External Libraries Used In This Web Application
+- **useContext**: Context is used for some states, such as the shopping cart's state, in order to have access to these states throughout all components in the web application.
+
+- **useReducer**: useReducer hook is used to manage the shopping cart state. Three actions can be dispatched to the reducer function:
+
+  - _Increase by one_ the quantity of a product in the shopping cart
+  - _Decrease by one_ the quantity of a product in the shopping cart
+  - _Delete_ a product from the shopping cart
+
+## 4. External Libraries
 
 - [**react-router-dom**](https://reactrouter.com/en/main): As mentioned in [section 2](#2-applications-web-pages), react-router-dom is used to build the different routes.
 
-- [**Tanstack Query**](https://tanstack.com/): Tanstack Query data-fetching library is used to fetch ingredients and recipes from the database.
+- [**Tanstack Query**](https://tanstack.com/): Tanstack Query data-fetching library is used to fetch the store's products and recipes from the database.
 
-- [**Framer Motion**](https://www.framer.com/motion/): Framer Motion library is used to add animations.
+- [**Framer Motion**](https://www.framer.com/motion/): Framer Motion library is used to add animations to various components.
