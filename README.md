@@ -6,12 +6,15 @@
 ![image](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)
 ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
+![FooDelivery Preview](/readme_images/foodelivery_preview.png "FooDelivery Preview")
+
 ## Table of Content
 
 1. [Introduction](#1-introduction)
 1. [Application's Web Pages](#2-applications-web-pages)
 1. [Key React Hooks/Features](#3-key-react-hooksfeatures)
 1. [External Libraries](#4-external-libraries)
+1. [How to run this application](#5-how-to-run-this-application)
 
 ## 1. Introduction
 
@@ -58,3 +61,12 @@ Using [**react-router-dom**](https://reactrouter.com/en/main), 4 routes are buil
 - [**Tanstack Query**](https://tanstack.com/): Tanstack Query data-fetching library is used to fetch the store's products and recipes from the database.
 
 - [**Framer Motion**](https://www.framer.com/motion/): Framer Motion library is used to add animations to various components.
+
+## 5. How to run this application
+
+- Clone this repository
+- `cd` into the root directory (Grocery-Store)
+- Run the following command: `git checkout master`
+- Run the following command: `npm install`
+- Run the following command: `npm start` and open the provided url in your browser
+- Finally, click on the Home link in the navigation bar
