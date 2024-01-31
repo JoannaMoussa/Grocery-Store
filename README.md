@@ -1,4 +1,6 @@
-# _FooDelivery_: A Grocery Store Web Application Built With ReactJS
+# **FooDelivery**: A Grocery Store Web Application Built With ReactJS
+
+# [🌐 Demo](https://joannamoussa.github.io/Grocery-Store/#/Grocery-Store/)
 
 ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![image](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
