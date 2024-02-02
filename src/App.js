@@ -12,6 +12,13 @@ import RecipesPage from "./pages/RecipesPage";
 import RecipeDetailPage from "./pages/RecipeDetailPage";
 
 const router = createHashRouter([
+  // This is to handle the root path given that I 'm using hash routing
+  {
+    path: "",
+    element: <RootLayout />,
+    children: [{ index: true, element: <HomePage /> }],
+    errorElement: <ErrorPage />,
+  },
   {
     path: "/Grocery-Store/",
     element: <RootLayout />,
